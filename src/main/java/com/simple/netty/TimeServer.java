@@ -5,7 +5,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * BIO,即同步阻塞模型.
+ * BIO模型,即同步阻塞模型.
+ * BIO的缺点: 每一个连接就要在服务端开启一个新的线程,在大型互联网公司,有成千上万个客户端连接时,服务器的资源将严重不足.
  */
 public class TimeServer {
 
