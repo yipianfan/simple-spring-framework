@@ -1,4 +1,4 @@
-package com.simple.netty;
+package com.simple.netty.bio;
 
 import java.io.*;
 import java.net.Socket;

@@ -1,4 +1,4 @@
-package com.simple.netty;
+package com.simple.netty.bio;
 
 import java.io.InputStreamReader;
 import java.io.LineNumberReader;

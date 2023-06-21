@@ -1,4 +1,4 @@
-package com.simple.netty;
+package com.simple.netty.bio;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 改进传统BIO模式,使用线程池,避免开辟过多的线程.
  */
-public class TimeServerV2 {
+public class TimeServer2 {
 
     public static void main(String[] args) throws IOException {
         int port = 8080;
