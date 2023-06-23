@@ -7,10 +7,10 @@ import java.text.SimpleDateFormat;
 /**
  * TimeServerHandler的v2版本,当读取客户端流时,用null判断,手动捕获异常.
  */
-public class TimeServerHandlerV2 implements Runnable {
+public class TimeServerHandler2 implements Runnable {
     private final Socket socket;
 
-    public TimeServerHandlerV2(Socket socket) {
+    public TimeServerHandler2(Socket socket) {
         this.socket = socket;
     }
 
