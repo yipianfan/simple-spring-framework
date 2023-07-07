@@ -1,5 +1,9 @@
 package com.simple.common;
 
+import org.objenesis.Objenesis;
+import org.objenesis.ObjenesisStd;
+import org.objenesis.instantiator.ObjectInstantiator;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -30,5 +34,20 @@ public class CoffeeTest {
         ObjectInputStream in = new ObjectInputStream(new FileInputStream("D:/Coffee.data"));
         Coffee coffee4 = (Coffee) in.readObject();
         System.out.println("coffee4: " + coffee4);
+        System.out.println();
+
+        // 通过第三方架包,这种方式也不会调用构造函数
+        Objenesis ob = new ObjenesisStd();
+        ObjectInstantiator<Coffee> ins = ob.getInstantiatorOf(Coffee.class);
+        Coffee coffee5 = ins.newInstance();
+        System.out.println("name: " + coffee5.name);
+        System.out.println("price: " + coffee5.price);
+        System.out.println("capacity: " + coffee5.capacity);
+        System.out.println("color: " + coffee5.color);
+
+        System.out.println("density: " + coffee5.density);
+        System.out.println("dateFormat: " + coffee5.dateFormat);
+        System.out.println("date: " + coffee5.date);
+        System.out.println("producingArea: " + coffee5.producingArea);
     }
 }
