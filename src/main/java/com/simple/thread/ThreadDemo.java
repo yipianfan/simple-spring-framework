@@ -59,4 +59,21 @@ public class ThreadDemo {
         }
         System.out.println(Thread.currentThread().getName() + "线程结束");
     }
+
+    /**
+     * 调用notify方法期间,线程并不会释放持有的锁.
+     */
+    synchronized void demo4() {
+        for (int i = 0; i < 10_000; i++) {
+            System.out.println(i + " -> " + Thread.currentThread().getName());
+            if ((i & 1) == 0) {
+                notify();
+            }
+        }
+        System.out.println(Thread.currentThread().getName() + "线程结束");
+    }
+
+    public static void main(String[] args) {
+        
+    }
 }
