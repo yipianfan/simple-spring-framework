@@ -6,6 +6,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
+/**
+ * Buffer中的3个概念：
+ * capacity：Buffer底层数组的容量大小，是固定不变的
+ */
 public class NioDemo {
 
     public static void main(String[] args) throws Exception {
