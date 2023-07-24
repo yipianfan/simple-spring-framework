@@ -1,5 +1,6 @@
 package com.simple.nio;
 
+import java.io.File;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.file.Path;
@@ -31,6 +32,24 @@ public class NioDemo {
                 buf.clear();
             }
             System.out.println(config);
+        }
+
+        String text = "This is a NIO demo.";
+        path = Paths.get("D:/nio.txt");
+        File file = path.toFile();
+        if (!file.exists()) {
+            file.createNewFile();
+        }
+        try (FileChannel channel = FileChannel.open(path, StandardOpenOption.WRITE)) {
+            ByteBuffer buffer = ByteBuffer.allocate(10);
+            for (int i = 0; i < text.length(); i++) {
+                buffer.put((byte) text.charAt(i));
+                if (buffer.position() == buffer.limit() || i == text.length() - 1) {
+                    buffer.flip();
+                    channel.write(buffer);
+                    buffer.clear();
+                }
+            }
         }
     }
 }
