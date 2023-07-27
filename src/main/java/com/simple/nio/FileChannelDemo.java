@@ -11,7 +11,7 @@ import java.nio.file.StandardOpenOption;
  * Buffer中的3个概念：
  * capacity：Buffer底层数组的容量大小，是固定不变的
  */
-public class NioDemo {
+public class FileChannelDemo {
 
     public static void main(String[] args) throws Exception {
         Path path = Paths.get("D:/opt/apache-maven-3.8.6/conf/settings.xml");
