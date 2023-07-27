@@ -23,7 +23,7 @@ public class NioDemo {
             ByteBuffer buf = ByteBuffer.allocate(10);
 
             StringBuilder config = new StringBuilder();
-            while (channel.read(buf) > 0) { // channel从文件中读数据,相当于向buffer里写数据
+            while (channel.read(buf) > 0) { // channel从文件中读数据,就是向buffer里写数据,所谓的读写,是相对于文件而言的,不是Buffer而言的
                 buf.flip(); // 将缓冲区切换为读模式
                 while (buf.position() < buf.limit()) {
                     config.append((char) buf.get());
