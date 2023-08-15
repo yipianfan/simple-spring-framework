@@ -14,7 +14,7 @@ public class BinarySearch {
             int middle = (start + end) >> 1;
             if (target == numbers[middle])
                 return middle;
-            else if (target >= numbers[middle])
+            else if (target > numbers[middle])
                 start = middle + 1;
             else
                 end = middle - 1;
