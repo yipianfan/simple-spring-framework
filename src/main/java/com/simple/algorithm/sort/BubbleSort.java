@@ -2,6 +2,7 @@ package com.simple.algorithm.sort;
 
 /**
  * 冒泡排序
+ * 冒泡排序是稳定的算法,它满足稳定算法的定义。 算法稳定性: 假设在数列中存在a[i]=a[j],若在排序之前a[i]在a[j]前面,并且排序之后,a[i]仍然在a[j]前面
  */
 public class BubbleSort {
 
