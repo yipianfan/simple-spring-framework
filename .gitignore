@@ -1,3 +1,4 @@
 .idea/
 Simple Spring Framework.iml
 target/
+src/main/java/com/simple/Morning.java
