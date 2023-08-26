@@ -10,12 +10,8 @@ public class CASDemo {
     private final AtomicInteger atomicInteger = new AtomicInteger(0);
 
     private void add() {
-        while (true) {
-            if (atomicInteger.compareAndSet(0, 1)) {
-                i++;
-                break;
-            }
-        }
+        while (!atomicInteger.compareAndSet(0, 1)) ;
+        i++;
         atomicInteger.getAndDecrement();
     }
 
