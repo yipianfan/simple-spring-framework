@@ -42,4 +42,19 @@ public class UnsafeUtil {
     public final native boolean compareAndSwapInt(Object obj, long offset, int expected, int update);
 
     public final native boolean compareAndSwapLong(Object obj, long offset, long expected, long update);
+
+
+    // Unsafe类定义了的数组的相关操作方法
+
+    /**
+     * @param arrayObj 要使用的数组对象
+     * @return 返回数组中index为0的内存偏移地址
+     */
+    public native int arrayBaseOffset(Class<?> arrayObj);
+
+    /**
+     * @param arrayClass 数组的class对象,如int[].class
+     * @return 返回数组中一个元素所占用的空间大小
+     */
+    public native int arrayIndexScale(Class<?> arrayClass);
 }
