@@ -28,4 +28,18 @@ public class UnsafeUtil {
         }
         return null;
     }
+
+    /**
+     * Unsafe类提供了以下3个方法用于CAS操作,CAS操作依赖于CPU的指令
+     *
+     * @param obj      修改field的所属对象
+     * @param offset   field的偏移量
+     * @param expected 期望值
+     * @param update   更新值
+     */
+    public final native boolean compareAndSwapObject(Object obj, long offset, Object expected, Object update);
+
+    public final native boolean compareAndSwapInt(Object obj, long offset, int expected, int update);
+
+    public final native boolean compareAndSwapLong(Object obj, long offset, long expected, long update);
 }
